@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>YATZY</title>
+	
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="stylecode.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
+
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-2 col-sm-2"></div>
+		<div class="col-xs-8 col-sm-8" id="PlayerActive">	
+			<div class="btn btn-default btn-block btn-lg currentPlayer" id="currentPlayer">Player 1</div>
+			<div class="btn btn-default btn-block btn-lg currentPlayer" id="waitingPlayer">Player 2</div>
+		</div>
+		<div class="col-xs-2 col-sm-2"></div>
+	</div>
+
+	<div class="row" id="TurnBoard">
+		<div class="col-xs-5 col-sm-3 col-md-4"><div class="currentTurn" id="Round1"><h2>Turn <span class="label label-danger" id="current_turn">1</span></h2></div></div>
+		<div class="col-xs-7 col-sm-9 col-md-8"></div>
+	</div>
+	<div class="row" >
+		
+		<div class="col-xs-12 col-sm-12" id="menu2">
+				<div class="col-xs-1 col-sm-1"></div>
+				<div class="col-xs-2 col-sm-2"><div id="die1" class="dices">0</div></div>
+				<div class="col-xs-2 col-sm-2"><div id="die2" class="dices">0</div></div>
+				<div class="col-xs-2 col-sm-2"><div id="die3" class="dices">0</div></div>
+				<div class="col-xs-2 col-sm-2"><div id="die4" class="dices">0</div></div>
+				<div class="col-xs-2 col-sm-2"><div id="die5" class="dices">0</div></div>
+				<div class="col-xs-1 col-sm-1"></div>
+		</div>
+		
+	</div>
+	<div class="row" id="GameButtons">
+		<div class="col-xs-3 col-sm-3"></div>
+		<div class="col-xs-6 col-sm-6">
+			
+				<div class="col-xs-12 col-sm-6 col-md-6"><button type="button" class="btn btn-primary" id="button1">Roll Dice</button></div>
+			<div class="col-xs-12 col-sm-6 col-md-6"><a data-toggle="modal" data-target="#myModal4" href="#"><button type="submit" class="btn btn-success" id="button2">Submit results</button></a></div>
+			
+		</div>
+		<div class="col-xs-3 col-sm-3"></div>
+	</div>
+	<div class="row" id="GameButtons2">
+		<div class="col-xs-3 col-sm-3"></div>
+		<div class="col-xs-6 col-sm-6">
+			
+			<div class="col-xs-12 col-sm-12"><p id="use_instructions">*Click dices to save them whilst throwing again</p></div>
+			
+		</div>
+		<div class="col-xs-3 col-sm-3"></div>
+	</div>
+	<div class="row" id="GameButtons2">
+		<div class="col-xs-3 col-sm-3"></div>
+		<div class="col-xs-6 col-sm-6">
+			
+			<div class="col-xs-12 col-sm-12"><a href="index.html"><button type="button" class="btn btn-danger btn-block" id="endGame">End Game</button></a></div>
+			
+		</div>
+		<div class="col-xs-3 col-sm-3"></div>
+	</div>
+</div>
+	
+	<div id="myModal4" class="modal fade" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+				<!-- Modal content-->
+    				<div class="modal-content">
+      					<div class="modal-header">
+        					<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title" id="player1Highscore">PLAYER NAME HERE !!!!!</h4>
+						</div>
+						<div class="modal-body">
+							<div class="input-group">
+  								<span class="input-group-addon" id="basic-addon1"><img src="glyphicons-795-dice-1.png"></span>
+  								<input type="button" class="form-control" aria-describedby="basic-addon1" id="onesPlayer1">
+							</div>
+							<div class="input-group">
+  								<span class="input-group-addon" id="basic-addon2"><img src="glyphicons-796-dice-2.png"></span>
+  								<input type="button" class="form-control" aria-describedby="basic-addon1" id="twosPlayer1">
+							</div>
+							<div class="input-group">
+  								<span class="input-group-addon" id="basic-addon3"><img src="glyphicons-797-dice-3.png"></span>
+  								<input type="button" class="form-control" aria-describedby="basic-addon1" id="threesPlayer1">
+							</div>
+							<div class="input-group">
+  								<span class="input-group-addon" id="basic-addon4"><img src="glyphicons-798-dice-4.png"></span>
+  								<input type="button" class="form-control" aria-describedby="basic-addon1" id="foursPlayer1">
+							</div>
+							<div class="input-group">
+  								<span class="input-group-addon" id="basic-addon5"><img src="glyphicons-799-dice-5.png"></span>
+  								<input type="button" class="form-control" aria-describedby="basic-addon1" id="fivesPlayer1">
+							</div>
+							<div class="input-group">
+  								<span class="input-group-addon" id="basic-addon6"><img src="glyphicons-800-dice-6.png"></span>
+								<input type="button" class="form-control" aria-describedby="basic-addon1" id="sixesPlayer1">
+							</div>
+							<div class="modal-content">
+								<div class="modal-header">
+								
+									<h4 class="modal-title" id="player2Highscore">PLAYER NAME HERE !!!!!</h4>
+								</div>
+								<div class="modal-body">
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon7"><img src="glyphicons-795-dice-1.png"></span>
+										<input type="button" class="form-control" aria-describedby="basic-addon1" id="onesPlayer2">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon8"><img src="glyphicons-796-dice-2.png"></span>
+										<input type="button" class="form-control" aria-describedby="basic-addon1" id="twosPlayer2">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon9"><img src="glyphicons-797-dice-3.png"></span>
+										<input type="button" class="form-control" aria-describedby="basic-addon1" id="threesPlayer2">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon10"><img src="glyphicons-798-dice-4.png"></span>
+										<input type="button" class="form-control" aria-describedby="basic-addon1" id="foursPlayer2">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon11"><img src="glyphicons-799-dice-5.png"></span>
+										<input type="button" class="form-control" aria-describedby="basic-addon1" id="fivesPlayer2">
+									</div>
+									<div class="input-group">
+										<span class="input-group-addon" id="basic-addon12"><img src="glyphicons-800-dice-6.png"></span>
+										<input type="button" class="form-control" aria-describedby="basic-addon1" id="sixesPlayer2">
+									</div>
+
+							<div class="modal-footer">
+								<button type="button" id="back_to_game" class="close btn btn-default" data-dismiss="modal">Back to the game!</button>
+							</div>
+						</div>			
+			</div>
+		</div>
+	</div>
+
+
+	<script>$('#newgame').load('page2.html #button2');</script>
+	<script>
+        $('[rel="popover"]').popover({
+            container: 'body',
+            html: true,
+            content: function () {
+                var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+                return clone;
+            }
+        });
+	</script>
+	<script>
+        $('.dropdown-toggle').dropdown();
+	</script>
+	<script src="jquery/dist/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script type="text/javascript" src="../static/javacode.js"></script>
+</body>

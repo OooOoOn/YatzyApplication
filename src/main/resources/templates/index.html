@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MainPage</title>
+	
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="stylecode.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container-fluid">
+		<div class="row">
+        <div id="menu" class="col-xs-5 col-sm-4">
+			
+		<div class="sidebar-nav">
+      		<div class="navbar navbar-default" role="navigation">
+        		<div class="navbar-header">
+          			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            		<span class="sr-only">Toggle navigation</span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          			</button>
+          		<span class="sr-only">Sidebar menu</span>
+        		</div>
+        	<div class="navbar-collapse collapse sidebar-navbar-collapse">
+          		<header id="name_of_game">YATZY</header>
+				<ul class="nav navbar-nav">
+            		<li id="newgame"><a data-toggle="modal" data-target="#myModal" href="#">new game</a></li>
+			
+					<li id="highscore"><a href="#" rel="popover" data-toggle="popover" data-popover-content="#popover" data-trigger="focus">highscore</a></li>
+					
+					<!-- "http://localhost:8080/highscore"-->
+					<!--
+<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+  <li><a tabindex="-1" href="#">Action</a></li>
+  <li><a tabindex="-1" href="#">Another action</a></li>
+  <li><a tabindex="-1" href="#">Something else here</a></li>
+  <li class="divider"></li>
+  <li><a tabindex="-1" href="#">Separated link</a></li>
+</ul>
+-->
+            
+					<li class="dropdown" id="history">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" data-trigger="focus">history<span class="caret"></span></a>
+                
+						<ul id="history-dropdown" class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu">
+                			<li id="playerHistory">Player History<span class="caret"></span></li>
+							
+							<li>
+								<form class="form-horizontal" role="form">
+								<div class="form-row has-feedback">
+									<div class="col-xs-7 col-sm-7 col-md-6"><input id="player_id"type="text" class="form-control" placeholder="Player name"/>
+										<i class="glyphicon glyphicon-user form-control-feedback"></i>
+									</div>
+    							
+									<div class="col-xs-5 col-sm-5 col-md-4 "><a data-toggle="modal" data-target="#myModal2" href="#"><button id="player_submit" type="submit">Submit</button></a></div>
+									<div class="col-md-2"></div>
+									
+								</div>
+									
+								</form>
+							</li>
+								
+							
+    							
+						
+					<!--  <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                         role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+id="test" onclick="playerChoice()" href="http://localhost:8080/person?name="-->
+                    
+							
+						<li id="gameStatistics">Round Statistics</li>
+							
+							<li>
+								<form class="form-horizontal" role="form">
+								<div class="form-row has-feedback">
+									<div class="col-xs-7 col-sm-7 col-md-6"><input id="round_id_input"type="text" class="form-control" placeholder="Round id"/>
+									
+									</div>
+    							
+									<div class="col-xs-5 col-sm-5 col-md-4 "><a data-toggle="modal" data-target="#myModal3" href="#"><button id="round_submit" type="submit">Submit</button></a></div>
+									<div class="col-md-2"></div>
+									
+								</div>
+									
+								</form>
+							</li>
+						</ul>
+					
+					</ul>
+				<div id="footer">
+            		<footer class="row">Copyright by Jon O.</footer>
+				</div>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+			
+    <div id="right-side" class="col-xs-7 col-sm-8">
+		
+       <div id="dice">
+           <div class="side front">
+               <div class="dot center"></div>
+           </div>
+            <div class="side front inner"></div>
+            <div class="side top">
+                <div class="dot dtop dleft"></div>
+                <div class="dot dbottom dright"></div>
+            </div>
+            <div class="side top inner"></div>
+            <div class="side right">
+                <div class="dot dtop dleft"></div>
+                <div class="dot center"></div>
+                <div class="dot dbottom dright"></div>
+            </div>
+            <div class="side right inner"></div>
+            <div class="side left">
+                <div class="dot dtop dleft"></div>
+                <div class="dot dtop dright"></div>
+                <div class="dot dbottom dleft"></div>
+                <div class="dot dbottom dright"></div>
+            </div>
+            <div class="side left inner"></div>
+            <div class="side bottom">
+                <div class="dot center"></div>
+                <div class="dot dtop dleft"></div>
+                <div class="dot dtop dright"></div>
+                <div class="dot dbottom dleft"></div>
+                <div class="dot dbottom dright"></div>
+            </div>
+            <div class="side bottom inner"></div>
+            <div class="side back">
+                <div class="dot dtop dleft"></div>
+                <div class="dot dtop dright"></div>
+                <div class="dot dbottom dleft"></div>
+                <div class="dot dbottom dright"></div>
+                <div class="dot center dleft"></div>
+                <div class="dot center dright"></div>
+            </div>
+            <div class="side back inner"></div>
+            <div class="side cover x"></div>
+            <div class="side cover y"></div>
+            <div class="side cover z"></div>
+        </div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>$('#newgame').load('page2.html #button2');</script>
+	<script src="jquery/dist/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+					<div id="myModal" class="modal fade" role="dialog" aria-hidden="true">
+  						<div class="modal-dialog">
+				<!-- Modal content-->
+    				<div class="modal-content">
+      					<div class="modal-header">
+        					<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Players' names</h4>
+						</div>
+						<div class="modal-body">
+							<form class="form-horizontal">
+								<div class="form-group has-feedback">
+
+									<div class="col-xs-12 col-md-12">
+										<input type="text" class="form-control" id="player_1" placeholder="Enter 1st player's name">
+									</div>
+								</div>
+								<div class="form-group">
+									
+									<div class="col-xs-12 col-md-12">
+										<input type="text" class="form-control" id="player_2" placeholder="Enter 2nd player's name">
+									</div>
+								</div>
+							</form>
+							
+						</div>
+						<div class="modal-footer">
+							<button type="submit" id="start_game" class="btn btn-default" data-dismiss="modal">Start the game!</button>
+						</div>
+							</div>
+
+						</div>
+					</div>
+	
+					<div id="myModal2" class="modal fade" role="dialog" aria-hidden="true">
+  						<div class="modal-dialog">
+				<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title"><span id="player_id2"></span>'s History</h4>
+								</div>
+								<div class="modal-body">
+							
+									<div>
+										<div>
+											<table class="table table-condensed table-bordered">
+										<tr>
+											<th>Round id</th>
+											<td id="round_id"></td>
+											<td id="round_id1"></td>
+											<td id="round_id2"></td>
+											<td id="round_id3"></td>
+											<td id="round_id4"></td>
+											<td id="round_id5"></td>
+										</tr>
+										<tr>
+											<th>Turn</th>
+											<td id="turn"></td>
+											<td id="turn1"></td>
+											<td id="turn2"></td>
+											<td id="turn3"></td>
+											<td id="turn4"></td>
+											<td id="turn5"></td>
+										</tr>
+										<tr>
+											<th>Combination</th>
+											<td id="combination"></td>
+											<td id="combination1"></td>
+											<td id="combination2"></td>
+											<td id="combination3"></td>
+											<td id="combination4"></td>
+											<td id="combination5"></td>
+										</tr>
+										<tr>
+											<th>Result</th>
+											<td id="result"></td>
+											<td id="result1"></td>
+											<td id="result2"></td>
+											<td id="result3"></td>
+											<td id="result4"></td>
+											<td id="result5"></td>
+										</tr>
+										<tr>
+											<th>Points</th>
+											<td id="points"></td>
+											<td id="points1"></td>
+											<td id="points2"></td>
+											<td id="points3"></td>
+											<td id="points4"></td>
+											<td id="points5"></td>
+										</tr>
+						
+									</table>
+								</div>
+							</div>					
+						</div>			
+					</div>
+				</div>
+			</div>
+			<div id="myModal3" class="modal fade" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title"><span id="thplayer"></span>Round Statistics</h4>
+						</div>
+						<div class="modal-body">
+							<table class="table table-condensed table-bordered">
+								<tr>
+									<td></td>
+									<th>Round id: <span id="selectedRoundID"></span></th>
+								</tr>
+								<tr>
+									<th>Winner</th>
+									<td id="winner"></td>
+								</tr>
+								<th>Loser</th>
+								<td id="looser"></td>
+								<tr>
+									<th>Date</th>
+									<td id="date"></td>
+								</tr>
+								<tr>
+									<th>Winner score</th>
+									<td id="winnerScore"></td>
+								</tr>
+										
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	<script>
+        $('[rel="popover"]').popover({
+            container: 'body',
+            html: true,
+            content: function () {
+                var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+                return clone;
+            }
+        });
+	</script>
+
+	<div id="popover" class="hide" >
+		<div>
+			<table class="table table-condensed table-bordered">
+				<tr>
+					<th>Player</th>
+					<th>Score</th>
+				</tr>
+				<tr>
+					<td id="player1"></td>
+					<td id="score1"></td>
+				</tr>
+				<td id="player2"></td>
+				<td id="score2"></td>
+				<tr>
+					<td id="player3"></td>
+					<td id="score3"></td>
+				</tr>
+				<tr>
+					<td id="player4"></td>
+					<td id="score4"></td>
+				</tr>
+				<tr>
+					<td id="player5"></td>
+					<td id="score5"></td>
+				</tr>
+				<tr>
+					<td id="player6"></td>
+					<td id="score6"></td>
+				</tr>
+				<tr>
+					<td id="player7"></td>
+					<td id="score7"></td>
+				</tr>
+				<tr>
+					<td id="player8"></td>
+					<td id="score8"></td>
+				</tr>
+				<tr>
+					<td id="player9"></td>
+					<td id="score9"></td>
+				</tr>
+				<tr>
+					<td id="player10"></td>
+					<td id="score10"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script>
+        $('.dropdown-toggle').dropdown();
+	</script>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../static/javacode.js"></script>
+
+</body>
+
+</html>
